@@ -1,12 +1,35 @@
 """
 =============================================================================
-Project Title: Rocket Shooter - 30-Second Rapid Fire Challenge
-Author: College Mini Project
-Language: Python 3 with Pygame & SQLite3
-Description: A beginner-friendly 2D shooter demonstrating Object-Oriented
-             Programming (OOP) principles, inheritance, polymorphism, and
-             database storage. Players compete to shoot as many enemies as
-             possible in a 30-second time trial.
+ROCKET SHOOTER - 30-SECOND RAPID FIRE CHALLENGE (COLLEGE MINI PROJECT)
+=============================================================================
+
+[1] HOW TO RUN:
+    Step 1: Install Pygame
+            pip install pygame-ce
+    Step 2: Run the script
+            python rocket_shooter.py
+
+[2] CONTROLS:
+    - Left / Right Arrow : Move Rocket
+    - Spacebar           : Shoot Bullets
+    - [R] Key            : Play 30s Again
+    - [Q] Key            : Quit Game
+
+[3] CODE ARCHITECTURE SETUP:
+    - FRONTEND:
+        * 600x700 Pygame window and 60 FPS clock
+        * Event loop & keyboard listeners
+        * Drawing shapes (Player, Bullets, Enemies, Boss)
+        * Heads-Up Display (30s countdown & kills counter)
+        * Game Over / Leaderboard screen
+    - BACKEND:
+        * Database Class : SQLite3 persistence for top 5 scores (scores.db)
+        * GameObject     : Base Parent class (x, y, width, height, color, draw)
+        * Player         : Child class inheriting GameObject
+        * Bullet         : Child class inheriting GameObject
+        * Enemy          : Child class inheriting GameObject
+        * BossEnemy      : Multi-level inheritance (GameObject -> Enemy -> BossEnemy)
+        * Game Class     : Manages 30s timer, collisions, spawning, and score
 =============================================================================
 """
 

@@ -21,8 +21,8 @@ export const FRONTEND_EXPLANATION = {
   bullets: [
     "Pygame Window & Resolution: Initializing the canvas (600x700 pixels) and setting the title bar.",
     "Drawing Visuals: Drawing the player rocket (cyan rect), bullets (yellow rect), regular enemies (red rects), and boss (purple rect with HP bar).",
-    "Heads-Up Display (HUD): Showing the player's current score, remaining heart lives, and current level at the top of the screen.",
-    "Game Over Screen: Rendering the dark overlay, final score, and retrieving the top 5 high scores table.",
+    "Heads-Up Display (HUD): Showing the 30-second countdown timer, total enemies shot, and current level at the top of the screen.",
+    "Results / Game Over Screen: Rendering the dark overlay, final score, and retrieving the top 5 high scores from SQLite.",
     "Event Loop & Input Listener: Capturing keyboard events (Left/Right arrow keys for navigation, Space for shooting, R for restart, Q for quit).",
     "Frame Rate Controller: Using pygame.time.Clock().tick(60) to keep the animation running at smooth 60 frames per second."
   ]
@@ -32,7 +32,7 @@ export const BACKEND_EXPLANATION = {
   title: "Backend in Simple Words",
   summary: "The Backend is the unseen 'engine brain' containing the rules, physics, data, and logic.",
   bullets: [
-    "State Management: Tracking numeric lives (3), current score, level calculations (level = score // 10 + 1), and game-over state.",
+    "30-Second Time Attack: Counting down 30.0s to 0.0s. Enemies passing the bottom do NOT end the game!",
     "Object Movement Physics: Updating coordinates (bullet.y -= speed, enemy.y += speed, boss bouncing horizontally).",
     "Collision Detection Engine: Checking if two rectangular bounding boxes intersect using Pygame's colliderect() algorithm.",
     "Entity Spawning Rules: Deciding when regular enemies appear on timer intervals and when the BossEnemy spawns (every 20 points).",
